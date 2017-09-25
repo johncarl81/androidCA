@@ -1,6 +1,7 @@
 package com.example.androidca;
 
 import javax.net.SocketFactory;
+import javax.net.ssl.SSLSocketFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
@@ -11,7 +12,7 @@ import java.net.Socket;
 public class Client {
 
     public static void main(String[] args) throws IOException {
-        Socket socket = SocketFactory.getDefault().createSocket("localhost", 9999);
+        Socket socket = SSLSocketFactory.getDefault().createSocket("localhost", 9999);
 
         InputStream stream = socket.getInputStream();
 
